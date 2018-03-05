@@ -1,0 +1,123 @@
+###Git安装
+	* 安装完初始化完初始化
+		git config --global user.name "Your Name"
+		git config --global user.email "email@example.com"
+
+###创建本地版本库
+	* mkdir learngit
+		创建文件夹
+		
+	* cd learngit
+		移动
+		
+	* ls
+	  ls -ah
+		查看文件列表
+
+	* git init
+		初始化本地仓库
+	
+	* git add readme.txt
+		添加文件/添加文件修改到暂存区
+	
+	* git commit -m "改动描述"
+		添加暂存区修改到本地版本库
+
+	* git commit -a -m "改动描述"
+		将工作区修改直接添加到本地版本库
+	
+	* git status
+		查看工作区状态
+	
+	* git diff readme.txt
+		如果工作区或暂存区有改动,查看具体修改内容
+		
+	* git log
+	  git log --pretty=oneline (简化修改日志)
+			查看版本库修改日志
+	
+	* cat readme.txt
+		查看文件内容
+
+###版本回退
+	* 本地版本库中回退到上一个版本
+		git reset --hard HEAD^
+	
+	* 知道commit_id,在版本的历史之间穿梭
+		git reset --hard commit_id
+		
+	* 要重返未来,查看命令历史,查询commit_id
+		git reflog
+
+###撤销修改 
+	* git checkout -- file
+		丢弃工作区的修改.让这个文件回到最近一次git commit或git add时的状态。
+		
+	* git reset HEAD readme.txt
+		用命令git reset HEAD file可以把暂存区的修改撤销掉（unstage），重新放回工作区：
+
+###删除文件
+	* rm test.txt
+		删除test.txt文件
+		
+	* git rm test.txt
+		从版本库中删除该文件,然后commit保存修改
+	
+	* git checkout -- file
+		从版本库中检出,并替换工作区该文件;[git checkout]其实是用版本库里的版本替换工作区的版本
+
+###GitHub远程仓库
+	*  ssh-keygen -t rsa -C "youremail@example.com"
+		创建本机SSH Key;
+	
+	* ssh -T git@github.com
+		测试是否能链接到Github服务器
+		
+	* git remote rm origin
+		如果出现:fatal: remote origin already exists.错误,则先移除远程关联,然后重新关联
+		
+	* git remote add origin git@github.com:michaelliao/learngit.git
+		将本地版本库关联GitHub仓库
+	
+	* git push -u origin master
+		第一次推送master分支的所有内容
+	
+	* git push origin master
+		把本地master分支的最新修改推送至GitHub
+
+	* git clone git@github.com:michaelliao/gitskills.git
+		将GitHub上的仓库克隆到本地
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
