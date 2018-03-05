@@ -111,7 +111,7 @@
 	* git log --graph --pretty=oneline --abbrev-commit 
 		查看分支的合并情况;
 
-###分支管理
+###分支管理策略
 
 
 
