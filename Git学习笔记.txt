@@ -1,159 +1,159 @@
-###�ο�����:https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/00137396287703354d8c6c01c904c7d9ff056ae23da865a000
+﻿###参考文章:https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/00137396287703354d8c6c01c904c7d9ff056ae23da865a000
 
-###���ذ�װGit
-	* ������վ
+###下载安装Git
+	* 下载网站
 		https://git-scm.com/downloads
-		����������ʹ�ù��ھ���(https://pan.baidu.com/s/1kU5OCOB#list/path=%2Fpub%2Fgit)
+		网速慢可以使用国内镜像(https://pan.baidu.com/s/1kU5OCOB#list/path=%2Fpub%2Fgit)
 	
-	* ��װ��ɺ�,�ڲ˵����ҵ�"Git" -> "Git Bash",�ĳ�һ�����������д��ڵĶ���,��˵��Git��װ�ɹ�!
+	* 安装完成后,在菜单里找到"Git" -> "Git Bash",蹦出一个类似命令行窗口的东西,就说明Git安装成功!
 	
-	* ��װ��ɺ�,����Ҫ���һ������,������������:
+	* 安装完成后,还需要最后一步设置,在命令行输入:
 	$ git config --global user.name "Your Name"
 	$ git config --global user.email "email"
 	
-###�����汾��
-	* �汾�����:
-		�汾�������ֿ�,Ӣ����repository,���Լ������һ��Ŀ¼,���Ŀ¼����������ļ������Ա�Git��������,ÿ���ļ����޸ġ�ɾ����
-		Git���ܸ��٣��Ա��κ�ʱ�̶�����׷����ʷ,�����ڽ���ĳ��ʱ�̿���"��ԭ"
+###创建版本库
+	* 版本库介绍:
+		版本库又名仓库,英文名repository,可以简单理解成一个目录,这个目录里面的所有文件都可以被Git管理起来,每个文件的修改、删除、
+		Git都能跟踪，以便任何时刻都可以追踪历史,或者在将来某个时刻可以"还原"
 		
-	* �����汾��:
-		1. ����һ��Ŀ¼�ǳ���,����,ѡ��һ�����ʵĵط�,����һ����Ŀ¼:
+	* 创建版本库:
+		1. 创建一个目录非常简单,首先,选择一个合适的地方,创建一个空目录:
 			`
-			$ mkdir learngit		(����һ����Ŀ)
-			$ cd learngit			(ȥ����Ŀ��)
-			$ pwd					(�鿴Ŀ¼)
+			$ mkdir learngit		(创建一个项目)
+			$ cd learngit			(去到项目中)
+			$ pwd					(查看目录)
 			`
-			�����ʹ��Windowsϵͳ��Ϊ�˱�����������Ī����������⣬��ȷ��Ŀ¼����������Ŀ¼�����������ġ�
+			如果你使用Windows系统，为了避免遇到各种莫名其妙的问题，请确保目录名（包括父目录）不包含中文。
 	
-		2. ͨ��[git init]��������Ŀ¼���Git���Թ����Ĳֿ�:
+		2. 通过[git init]命令把这个目录编程Git可以管理的仓库:
 			`
 			$ git init
 			`
-			�ֿ�ʹ�������,���Ҹ�������һ���ղֿ�(empty Git repository),ϸ�ĵĶ��߿��Է��ֵ�ǰĿ¼���ֶ���һ��[.git]��Ŀ¼,���Ŀ¼��
-			Git�����ٹ����汾���,û�²�Ҫ�ܵ��ܹ��޸����Ŀ¼����ļ�,��Ȼ������,�Ͱ�Git�ֿ���ƻ���.
+			仓库就创建好了,而且告诉你是一个空仓库(empty Git repository),细心的读者可以发现当前目录下又多了一个[.git]的目录,这个目录是
+			Git来跟踪管理版本库的,没事不要受到能够修改这个目录里的文件,不然改乱了,就把Git仓库给破坏了.
 			
-	* ���ļ����ӵ��汾��
-		1. ��learngitĿ¼�´���һ��readme.txt�ļ�
-			ע��:һ��Ҫ�ŵ�learngitĿ¼�£���Ŀ¼Ҳ�У�����Ϊ����һ��Git�ֿ⣬�ŵ������ط�Git������Ҳ�Ҳ�������ļ���
+	* 把文件添加到版本库
+		1. 在learngit目录下创建一个readme.txt文件
+			注意:一定要放到learngit目录下（子目录也行），因为这是一个Git仓库，放到其他地方Git再厉害也找不到这个文件。
 	
-		��ͨ��������readme.txt�ŵ�Git�ֿ�:
-		2. ������[git add]����Git,���ļ����ӵ��ֿ�:
+		再通过两步将readme.txt放到Git仓库:
+		2. 用命令[git add]告诉Git,把文件添加到仓库:
 			`
 			$ git add readme.txt
 			`	
-			ִ�����������,û���κ���ʾ,��Ͷ���,Unix����ѧ��"û����Ϣ���Ǻ���Ϣ",˵�����ӳɹ�.
+			执行上面的命令,没有任何显示,这就对了,Unix的哲学是"没有消息就是好消息",说明添加成功.
 		
-		3. ������[git commit]����Git,���ļ��ύ���ֿ�:
+		3. 用命令[git commit]告诉Git,把文件提交到仓库:
 			`
 			$ git commit -m "wrote a readme file"
 			`
-			[-m]����������Ǳ����ύ��˵��,����������������,����Ϊ���εĸĶ���¼.
+			[-m]后面输入的是本次提交的说明,可以输入任意内容,内容为本次的改动记录.
 			
-		*4. ������[git commit -a -m ""]���Ի���������Ϊһ��.
+		*4. 用命令[git commit -a -m ""]可以化上面两步为一步.
 		
-	* ����:
-		һЩ��������:
-			һ��ֿ��е��ļ����ܴ�����������״̬��
-			1��Untracked files �� �ļ�δ�����٣�
-			2��Changes to be committed �� �ļ��ѻ��棬�����´��ύ�����ݣ�
-			3��Changes bu not updated �� �ļ����޸ģ�����û�����ӵ���������
-			git commit -m ""  ֻ���ύ���ӵ����������ļ���ֻ�ύ���ӵģ�
-			git commit -a -m ""  ���ύ�޸Ĺ�������û�����ӵ����������ļ����޸Ĺ��ľ����ύ��
-			ʹ�����git log  �ܲ鿴�ύ��ʷ���������  --pretty=oneline  ��ʹ���ݵ�����ʾ
-			ʹ�����git status  ��������ʱ�����ղֿ⵱ǰ��״̬
+	* 附加:
+		一些常用命令:
+			一般仓库中的文件可能存在于这三种状态：
+			1）Untracked files → 文件未被跟踪；
+			2）Changes to be committed → 文件已缓存，这是下次提交的内容；
+			3）Changes bu not updated → 文件被修改，但并没有添加到缓存区。
+			git commit -m ""  只会提交添加到缓存区的文件（只提交添加的）
+			git commit -a -m ""  能提交修改过，但是没有添加到缓存区的文件（修改过的就能提交）
+			使用命令：git log  能查看提交历史，后面加上  --pretty=oneline  能使内容单行显示
+			使用命令：git status  能让我们时刻掌握仓库当前的状态
 
-###��ʱ���չ�������״̬:
-	* Ҫ��ʱ���չ�������״̬��ʹ��git status���
+###随时掌握工作区的状态:
+	* 要随时掌握工作区的状态，使用git status命令。
 
-	* ���git status���������ļ����޸Ĺ�����[git diff]������Բ鿴�޸����ݡ�
+	* 如果git status告诉你有文件被修改过，用[git diff]命令可以查看修改内容。
 	
-###�汾����
-	git�汾���˿��Ի��˵����һ��commit.
+###版本回退
+	git版本回退可以回退到最近一个commit.
 	
-	* ���˵���һ���汾:
-		1. ʹ��[git reset --hard HEAD^]������Ի��˵���һ���ύ�İ汾.
+	* 回退到上一个版本:
+		1. 使用[git reset --hard HEAD^]命令可以回退到上一个提交的版本.
 			`
 			$ git reset --hard HEAD^
 			`
-			��ʱʹ��[git log --pretty=oneline]����鿴��־,�����Ѿ����˵�����һ���汾,�������µİ汾��,�������µİ汾��ʧ������
+			此时使用[git log --pretty=oneline]命令查看日志,发现已经回退到了上一个版本,但是最新的版本啦,但是最新的版本消失不见了
 	
-	* ���˵���һ���汾�ٻص����°汾
-		1. ʹ��[git reset --hard (commit_id)]������Իص�ָ��commit_id��Ӧ�İ汾��
+	* 回退到上一个版本再回到最新版本
+		1. 使用[git reset --hard (commit_id)]命令可以回到指定commit_id对应的版本号
 			`
 			$ git reset --hard fead5d2
 			`
-			��������д���δ�ر�,�������ϲ鿴���°��commit_id,ʹ�ø��������,���������
+			如果命令行窗口未关闭,可以向上查看最新版的commit_id,使用该命令回退,如果忘记了
 			
-	* �鿴��ʷcommit_id
-		1. ʹ��[git reflog]�鿴������ʷ,�Ա�ȷ��Ҫ�ص�δ���ĸ��汾
+	* 查看历史commit_id
+		1. 使用[git reflog]查看命令历史,以便确定要回到未来哪个版本
 		
-	* ע�⹤�������ݴ���״̬
-		1. ��[git diff HEAD -- readme.txt]������Բ鿴�������Ͱ汾���޸�����.
+	* 注意工作区和暂存区状态
+		1. 用[git diff HEAD -- readme.txt]命令可以查看工作区和版本库修改区别.
 			
-###�����޸�
-	1. ��������˹�����ĳ���ļ�������,��ֱ�Ӷ������������޸�ʱ,������[git checkout -- file]
+###撤销修改
+	1. 当你改乱了工作区某个文件的内容,想直接丢弃工作区的修改时,用命令[git checkout -- file]
 		`
 		$ git checkout -- readme.txt
 		`		
 	
-	2. ���㲻�������˹�����ĳ���ļ�������,�����ӵ����ݴ���ʱ,��Ҫ�����޸�,������,��һ��������[git reset HEAD file],�ͻص��˳���1,�ڶ���,��1
+	2. 当你不但改乱了工作区某个文件的内容,还添加到了暂存区时,想要丢弃修改,分两步,第一步用命令[git reset HEAD file],就回到了场景1,第二步,看1
 		`
 		$ git reset HEAD readme.txt
 		`
 	
-	3. �Ѿ��ύ�˲����ʵ��޸ĵ��汾��ʱ,��Ҫ���������ύ,�����ð汾����,����ǰ����û�����͵�Զ�̿�.
+	3. 已经提交了不合适的修改到版本库时,想要撤销本次提交,就是用版本回退,不过前提是没有推送到远程库.
 			
-###ɾ���ļ�
-	������[rm test.txt]ɾ��һ���ļ�ʱ,������ļ����ύ���汾��,һ�����������龰:
-	1. ɾ���ˣ���Ϊ�汾���ﻹ���أ����Կ��Ժ����ɵذ���ɾ���ļ��ָ������°汾��
+###删除文件
+	当你用[rm test.txt]删除一个文件时,如果该文件已提交至版本库,一般面临两种情景:
+	1. 删错了，因为版本库里还有呢，所以可以很轻松地把误删的文件恢复到最新版本：
 		`
 		$ git checkout -- test.txt
 		`
-		[git checkout]��ʵ���ð汾����İ汾�滻�������İ汾,���۹��������޸Ļ���ɾ��,������"һ����ԭ"
+		[git checkout]其实是用版本库里的版本替换工作区的版本,如论工作区是修改还是删除,都可以"一键还原"
 	
-	2. ��ȷʵ��Ҫɾ������ļ�:�Ѱ汾���������ļ�Ҳɾ��,���°汾��
+	2. 你确实想要删除这个文件:把版本库里的这个文件也删除,更新版本库
 		`
 		$ git rm test.txt
 		
 		$ git commit -m "remove test.txt"
 		`
-		����git rm����ɾ��һ���ļ������һ���ļ��Ѿ����ύ���汾�⣬��ô����Զ���õ�����ɾ������ҪС�ģ���ֻ�ָܻ��ļ������°汾����ᶪʧ���һ���ύ�����޸ĵ����ݡ�
+		命令git rm用于删除一个文件。如果一个文件已经被提交到版本库，那么你永远不用担心误删，但是要小心，你只能恢复文件到最新版本，你会丢失最近一次提交后你修改的内容。
 			
-###ʹ��GitHub��Զ�ֿ̲�
-	GitHub[https://github.com/],�����վ�����ṩGit�ֿ��йܷ���ģ����ԣ�ֻҪע��һ��GitHub�˺ţ��Ϳ�����ѻ��GitԶ�ֿ̲⡣
+###使用GitHub的远程仓库
+	GitHub[https://github.com/],这个网站就是提供Git仓库托管服务的，所以，只要注册一个GitHub账号，就可以免费获得Git远程仓库。
 	
-	* ���ڱ���Git�ֿ���GitHub�ֿ�֮����ͨ��SSH���ܵ�,������Ҫһ������:
-		1. ����SSH Key.���û���Ŀ¼��,������û��.sshĿ¼,�����,�ٿ�����û��[id_rsa]��[id_rsa.pub]�������ļ�,����Ѿ�����,����ֱ�ӽ�����һ��.���û��,��Shell(Windows�´�GitBash)
-		����SSH Key:
+	* 由于本地Git仓库与GitHub仓库之间是通过SSH加密的,所以需要一点设置:
+		1. 创建SSH Key.在用户主目录下,看看有没有.ssh目录,如果有,再看看有没有[id_rsa]和[id_rsa.pub]这两个文件,如果已经有了,可以直接进行下一步.如果没有,打开Shell(Windows下打开GitBash)
+		创建SSH Key:
 			`
 			$ ssh-keygen -t rsa -C "youremail@example.com"
 			`
-			Ȼ��һ·�س���ʹ��Ĭ��ֵ���ɣ��������KeyҲ�������ھ���Ŀ�ģ�����Ҳ�����������롣
-			���һ��˳���Ļ����������û���Ŀ¼���ҵ�.sshĿ¼��������id_rsa��id_rsa.pub�����ļ�������������SSH Key����Կ�ԣ�id_rsa��˽Կ������й¶��ȥ��id_rsa.pub�ǹ�Կ�����Է��ĵظ����κ���.
+			然后一路回车，使用默认值即可，由于这个Key也不是用于军事目的，所以也无需设置密码。
+			如果一切顺利的话，可以在用户主目录里找到.ssh目录，里面有id_rsa和id_rsa.pub两个文件，这两个就是SSH Key的秘钥对，id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人.
 		
-		2. ��½GitHub���򿪡�Account settings������SSH Keys��ҳ�棺
-			Ȼ�󣬵㡰Add SSH Key������������Title����Key�ı�����ճ��id_rsa.pub�ļ������ݣ�
-			�㡰Add Key�������Ӧ�ÿ����Ѿ����ӵ�Key��
+		2. 登陆GitHub，打开“Account settings”，“SSH Keys”页面：
+			然后，点“Add SSH Key”，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容：
+			点“Add Key”，你就应该看到已经添加的Key：
 			
-			ΪʲôGitHub��ҪSSH Key�أ���ΪGitHub��Ҫʶ��������͵��ύȷʵ�������͵ģ������Ǳ���ð��ģ���Git֧��SSHЭ�飬���ԣ�GitHubֻҪ֪������Ĺ�Կ���Ϳ���ȷ��ֻ�����Լ��������͡�
-			��Ȼ��GitHub���������Ӷ��Key���ٶ��������ɵ��ԣ���һ����ڹ�˾�ύ��һ����ڼ����ύ��ֻҪ��ÿ̨���Ե�Key�����ӵ�GitHub���Ϳ�����ÿ̨��������GitHub�����ˡ�
+			为什么GitHub需要SSH Key呢？因为GitHub需要识别出你推送的提交确实是你推送的，而不是别人冒充的，而Git支持SSH协议，所以，GitHub只要知道了你的公钥，就可以确认只有你自己才能推送。
+			当然，GitHub允许你添加多个Key。假定你有若干电脑，你一会儿在公司提交，一会儿在家里提交，只要把每台电脑的Key都添加到GitHub，就可以在每台电脑上往GitHub推送了。
 
-	* ����Զ�̿�
+	* 添加远程库
 		fatal: remote origin already exists.[http://blog.csdn.net/dengjianqiang2011/article/details/9260435]
-		����GitHubԶ�ֿ̲�[https://www.cnblogs.com/zhouxihi/p/6181737.html]
+		创建GitHub远程仓库[https://www.cnblogs.com/zhouxihi/p/6181737.html]
 		"ssh: connect to host github.com port 22: Connection timed out"[http://blog.csdn.net/vosang/article/details/50499300]
 	
-		1. Ҫ����һ��Զ�̿�,ʹ������[git remote add origin git@server -name:path/repo-name.git]
+		1. 要关联一个远程库,使用命令[git remote add origin git@server -name:path/repo-name.git]
 			`
 			$ git remote add origin git@github.com:Mr-Zheng-yz/learngit.git
 			`
-		2. ������,ʹ������[git push -u origin master]��һ������master��֧����������;
-			�˺�,ÿ�α����ύ��,ֻҪ�б�Ҫ,�Ϳ���ʹ������[git push origin master]���������޸�;
+		2. 关联后,使用命令[git push -u origin master]第一次推送master分支的所有内容;
+			此后,每次本地提交后,只要有必要,就可以使用命令[git push origin master]推送最新修改;
 			
-			(�ֲ�ʽ�汾ϵͳ�����ô�֮һ���ڱ��ع�����ȫ����Ҫ����Զ�̿�Ĵ��ڣ�Ҳ������û������������������������SVN��û��������ʱ���Ǿܾ��ɻ�ģ����������ʱ���ٰѱ����ύ����һ�¾�
-			�����ͬ��������̫�����ˣ�)
+			(分布式版本系统的最大好处之一是在本地工作完全不需要考虑远程库的存在，也就是有没有联网都可以正常工作，而SVN在没有联网的时候是拒绝干活的！当有网络的时候，再把本地提交推送一下就
+			完成了同步，真是太方便了！)
 			
-	* ��Զ�̿��¡
+	* 从远程库克隆
 			
 			
 			
