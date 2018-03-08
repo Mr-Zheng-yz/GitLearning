@@ -423,7 +423,28 @@
 			`
 	
 	* 操作标签
+		1. 删除一个本地标签
+			用命令[git tag -d <tag_name>]
+			`
+			$ git tag -d v0.1
+			`
 			
+		2. 删除一个远程仓库的标签
+			先删除本地该标签,再用命令[git push origin :refs/tags/v1.0]
+			`
+			$ git push origin :refs/tags/v1.1
+			
+		3. 推送一个本地标签到远程库
+			用命令[git push origin <tagname>]
+			`
+			$ git push origin v1.0
+			`
+			
+		4. 推送全部未推送过的本地标签
+			用命令[git push origin --tags]
+			`
+			$ git push origin --tags
+			`
 			
 			
 			
