@@ -63,7 +63,7 @@
 			使用命令：git status  能让我们时刻掌握仓库当前的状态
 
 ###随时掌握工作区的状态:
-	* 要随时掌握工作区的状态，使用[git status]命令。
+	* 要随时掌握工作区的状态，使用git status命令。
 
 	* 如果git status告诉你有文件被修改过，用[git diff]命令可以查看修改内容。
 	
@@ -213,7 +213,7 @@
 			`
 			$ git branch -d dev
 			`
-			由于git创建分支速度快,并且功能强大,Git鼓励大量使用分支;
+			GIT鼓励大量使用分支;
 			
 	* 冲突解决与日志查询
 		1. 分支合并后发生冲突
@@ -287,7 +287,21 @@
 		修复bug时，我们会通过创建新的bug分支进行修复，然后合并，最后删除；
 		当手头工作没有完成时，先把工作现场git stash一下，然后去修复bug，修复后，再git stash pop，回到工作现场。
 			
-			
+	* Feature分支
+		每添加一个新功能,最好新建一个feature分支,在上面开发,合并,最后删除;
+		
+		1. 如果在一个分支上开发了一个新功能,正开发了一半,上面突然取消了这个功能,这时候删除这个分支:
+			`
+			$ git branch -d feature-vulcan
+			error: The branch 'feature-vulcan' is not fully merged.
+			If you are sure you want to delete it, run 'git branch -D feature-vulcan'.
+			`
+		这时提示:销毁时报.Git友情提醒,frature-vulcan分支还没有被合并,如果删除,将丢失修改;如果要强行删除
+			,要用[git branch -D feature-vulcan]:
+			`
+			$ git branch -D feature-vulcan
+			Deleted branch feature-vulcan (was 756d4af).
+			`
 			
 			
 			

@@ -118,8 +118,23 @@
 	* git merge --no-ff -m "add --no-ff命令" dev
 		强制禁用Fast forward默认模式，Git就会在merge时生成一个新的commit，这样，从分支历史上就可以看出分支信息
 
-
-
+###Bug分支
+	* git stash
+		保存工作现场;
+	* git stash list
+		查看所有保存的工作现场;
+	* git stash apply
+		恢复工作现场,但是恢复后,stash内容并不删除;
+	* git stash drop
+		删除工作现场列表中的一个;
+	* git stash pop
+		恢复工作现场,并从工作现场列表中删除这个工作现场;
+	* git stash apply stash@{0}
+		可以多次stash，恢复的时候，先用git stash list查看，然后恢复指定的stash
+		
+###Feature分支
+	* git branch -D <分支name>
+		强行删除一个未被合并的分支;
 
 
 
