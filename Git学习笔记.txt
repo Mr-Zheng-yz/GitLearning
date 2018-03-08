@@ -381,7 +381,48 @@
 			4. 没有冲突或者解决掉冲突后，再用git push origin branch-name推送就能成功！
 			5. 如果git pull提示“no tracking information”，则说明本地分支和远程分支的链接关系没有创建，用命令
 			git branch --set-upstream branch-name origin/branch-name。
+
+###标签管理
+	tag就是一个让人容易记住的有意义的名字，它跟某个commit绑在一起。
+
+	* 创建标签
+		1. 打标签:
+			为当前commit打一个标签,用命令[git tag v1.0]
+			`
+			$ git tag v1.0
+			`
 			
+		2. 打标签并添加描述:
+			为当前commit打一个有描述的标签,用命令[git tag -a v1.0 -m "标签的描述"]
+			`
+			$ git tag -a v1.0 -m "标签的描述"
+			`
+			
+		3. 为指定commit_id添加标签:
+			先用命令[git log --pretty=oneline --abbrev-commit]查看历史commit_id;
+			`
+			$ git log --pretty=oneline --abbrev-commit
+			143382e (HEAD -> master, tag: v1.0, origin/master, origin/HEAD, dev) add多人协作
+			702986f (origin/dev) compale notsame
+			20dab99 (tag: v0.9) add多人协作1example
+			`
+			然后,用命令[git tag -a v1.0 -m "标签的描述" <commit_id>]为当前的
+			`
+			$ git tag -a v1.0 -m "标签的描述" 9416fd6
+			`
+		4. 查看标签
+			用命令[git tag]查看所有标签;
+			用命令[git show v1.0]查看标签具体内容;
+			`
+			$ git tag
+			$ git show v1.0
+			`
+		5. 通过-s用私钥签名一个标签:
+			`
+			$ git tag -s v0.2 -m "signed version 0.2 release" fec145a
+			`
+	
+	* 操作标签
 			
 			
 			
