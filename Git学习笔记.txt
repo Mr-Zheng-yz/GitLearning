@@ -465,7 +465,7 @@
 			远程库叫gitee了;
 		- 用[git remote -v]查看远程库信息,发现远程库名字已经改变了;
 			
-	2. 两种关联汇总
+	2. 两种关联情况汇总
 		- 已有项目时:
 			[git init]		初始化Git;
 			[git add -A] 	添加全部文件到版本控制;
@@ -505,8 +505,23 @@
 		库，比如Java编译产生的.class文件；
 		3. 忽略你自己的带有敏感信息的配置文件，比如存放口令的配置文件。
 			
-			
-			
+	* 如果你想添加一个文件,但发现添加不了,原因就是这个文件被.gitignore忽略了:
+		`
+		$ git add App.class
+		The following paths are ignored by one of your .gitignore files:
+		App.class
+		Use -f if you really want to add them.
+		`
+		这时,可以使用[git add -f App.class]强制添加到Git:
+		`
+		$ git add -f App.class
+		`
+		或者检查.gitignore,需要找出来哪个规则写错了[git check-ignore]
+		`
+		$ git check-ignore -v App.class
+		`
+	
+	* .gitignore文件本身要放到版本库里,并且可以对.gitignore做版本管理
 			
 			
 			

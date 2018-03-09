@@ -176,7 +176,11 @@
 	* git remote add <自定义远程库名字> git@github.com:Mr-Zheng-yz/GitLearning
 		自己起远程库的名字;
 
-
+###忽略特殊文件
+	* git add -f App.class
+		强制添加被.gitignore忽略的文件到Git;
+	* git check-ignore -v <file_name>
+		检查文件名对应的.gitignore中忽略语句
 
 
 
